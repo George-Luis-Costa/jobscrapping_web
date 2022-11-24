@@ -3,8 +3,7 @@ import { VictoryPie, VictoryLabel, VictoryChart, VictoryLine } from 'victory';
 import VacanciesService from './services/vacancies';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Container, Row, Col } from 'react-bootstrap/';
-
-
+import './style.css';
 
 
 function App() {
@@ -40,69 +39,72 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Container fluid='sm'>
-        <Row>
-          <Col>
-            <div style={{ "width": "100%" }}>
-              {/* Grafico getVacanciesAmountDayTecnology() */}
-              <VictoryPie
-                animate={{ duration: 1000 }}
-                colorScale={["blue", "green", "red"]}
-                data={data}
-              />
-            </div>
+    <div>
+      <Container fluid>
+        <Row style={{ justifyContent: "center" }}>
+          <div className='containerStyle'>
+            <Col xs={6}>
+              <div style={{ width: "100%" }}>
+                <Dropdown className='mt-2'>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Tipo de Tecnologia
+                  </Dropdown.Toggle>
 
-          </Col>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Mobile</Dropdown.Item>
+                    <Dropdown.Item>Web</Dropdown.Item>
+                    <Dropdown.Item>Back-end</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
 
-          <Col>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Tipo de Tecnologia
-              </Dropdown.Toggle>
+                {/* getVacanciesAmountTecnology() */}
+                <VictoryChart>
+                  {
+                    data2.map((item, index) => {
+                      return (
+                        <VictoryLine
+                          labelComponent={<VictoryLabel text={item.name} />}
+                          animate={{
+                            duration: 2000,
+                            onLoad: { duration: 1000 }
+                          }}
+                          key={index}
+                          data={item.vagas}
+                          style={{
+                            data: { stroke: item.color }
+                          }}
+                        />
+                      )
+                    })
+                  }
 
-              <Dropdown.Menu>
-                <Dropdown.Item>Mobile</Dropdown.Item>
-                <Dropdown.Item>Web</Dropdown.Item>
-                <Dropdown.Item>Back-end</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                </VictoryChart>
+                <ul>
+                  {
+                    data2.map((item, index) => {
+                      return (
+                        <li style={{ color: item.color, fontSize: "15px" }}>
+                          {item.name}
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              </div>
+            </Col>
+          </div>
 
-            {/* getVacanciesAmountTecnology() */}
-            <VictoryChart>
-              {
-                data2.map((item, index) => {
-                  return (
-                    <VictoryLine
-                      labelComponent={<VictoryLabel text={item.name} />}
-                      animate={{
-                        duration: 2000,
-                        onLoad: { duration: 1000 }
-                      }}
-                      key={index}
-                      data={item.vagas}
-                      style={{
-                        data: { stroke: item.color }
-                      }}
-                    />
-                  )
-                })
-              }
-
-            </VictoryChart>
-            {
-              data2.map((item, index) => {
-                return (
-                  <h2 style={{ color: item.color }}>
-                    {item.name}
-                  </h2>
-                )
-              })
-            }
+          <Col xs={6} className='containerStyle'>
+            {/* Grafico getVacanciesAmountDayTecnology() */}
+            <VictoryPie
+              animate={{ duration: 1000 }}
+              colorScale={["blue", "green", "red"]}
+              data={data}
+            />
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 
