@@ -49,7 +49,9 @@ function App() {
 
         <div>
           <select>
-            <option>mês</option>
+            <option>Mobile</option>
+            <option>Web</option>
+            <option>Back-end</option>
           </select>
 
           {/* getVacanciesAmountTecnology() */}
