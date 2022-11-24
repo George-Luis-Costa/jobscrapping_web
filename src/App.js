@@ -3,6 +3,8 @@ import { VictoryPie, VictoryLabel, VictoryChart, VictoryLine } from 'victory';
 import logo from './logo.svg';
 import './App.css';
 import VacanciesService from './services/vacancies';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 
 function App() {
@@ -48,11 +50,23 @@ function App() {
         />
 
         <div>
-          <select>
+          {/* <select>
             <option>Mobile</option>
             <option>Web</option>
             <option>Back-end</option>
-          </select>
+          </select> */}
+
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Tipo de Tecnologia
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Mobile</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Web</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Back-end</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           {/* getVacanciesAmountTecnology() */}
           <VictoryChart>
