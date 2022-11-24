@@ -2,11 +2,13 @@ import api from "./api";
 
 export default class VacanciesService {
 
-    async getVacancies() {
+    async getVacanciesAmountTecnology(props) {
         try {
             const response = await new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve({
+                        // passar os dados da API 
+                        // data: props.data
                         data: [
                             {
                                 "x": "React",
@@ -17,7 +19,7 @@ export default class VacanciesService {
                                 "y": 100
                             },
                             {
-                                "x": "zazaz",
+                                "x": "Angular",
                                 "y": 100
                             },
                         ]
@@ -29,11 +31,13 @@ export default class VacanciesService {
             throw error;
         }
     }
-    async getVacancies2() {
+    async getVacanciesAmountDayTecnology(props) {
         try {
             const response = await new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve({
+                        // passar os dados da API 
+                        // data: props.data
                         data: [
                             {
                                 "name": "React",
