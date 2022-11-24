@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { VictoryPie, VictoryLabel, VictoryChart, VictoryLine } from 'victory';
-import logo from './logo.svg';
-import './App.css';
 import VacanciesService from './services/vacancies';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Container, Row, Col } from 'react-bootstrap/';
+
 
 
 
@@ -41,66 +41,67 @@ function App() {
 
   return (
     <>
-      <div style={{ "width": 300 }}>
-        {/* Grafico getVacanciesAmountDayTecnology() */}
-        <VictoryPie
-          animate={{ duration: 1000 }}
-          colorScale={["blue", "green", "red"]}
-          data={data}
-        />
+      <Container fluid='sm'>
+        <Row>
+          <Col>
+            <div style={{ "width": "100%" }}>
+              {/* Grafico getVacanciesAmountDayTecnology() */}
+              <VictoryPie
+                animate={{ duration: 1000 }}
+                colorScale={["blue", "green", "red"]}
+                data={data}
+              />
+            </div>
 
-        <div>
-          {/* <select>
-            <option>Mobile</option>
-            <option>Web</option>
-            <option>Back-end</option>
-          </select> */}
+          </Col>
 
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              Tipo de Tecnologia
-            </Dropdown.Toggle>
+          <Col>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Tipo de Tecnologia
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Mobile</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Web</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Back-end</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu>
+                <Dropdown.Item>Mobile</Dropdown.Item>
+                <Dropdown.Item>Web</Dropdown.Item>
+                <Dropdown.Item>Back-end</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          {/* getVacanciesAmountTecnology() */}
-          <VictoryChart>
+            {/* getVacanciesAmountTecnology() */}
+            <VictoryChart>
+              {
+                data2.map((item, index) => {
+                  return (
+                    <VictoryLine
+                      labelComponent={<VictoryLabel text={item.name} />}
+                      animate={{
+                        duration: 2000,
+                        onLoad: { duration: 1000 }
+                      }}
+                      key={index}
+                      data={item.vagas}
+                      style={{
+                        data: { stroke: item.color }
+                      }}
+                    />
+                  )
+                })
+              }
+
+            </VictoryChart>
             {
               data2.map((item, index) => {
                 return (
-                  <VictoryLine
-                    labelComponent={<VictoryLabel text={item.name} />}
-                    animate={{
-                      duration: 2000,
-                      onLoad: { duration: 1000 }
-                    }}
-                    key={index}
-                    data={item.vagas}
-                    style={{
-                      data: { stroke: item.color }
-                    }}
-                  />
+                  <h2 style={{ color: item.color }}>
+                    {item.name}
+                  </h2>
                 )
               })
             }
-
-          </VictoryChart>
-          {
-            data2.map((item, index) => {
-              return (
-                <h2 style={{ color: item.color }}>
-                  {item.name}
-                </h2>
-              )
-            })
-          }
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
