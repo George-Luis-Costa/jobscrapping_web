@@ -106,11 +106,10 @@ function App() {
         </Container>
 
         <Container className='mt-4'>
-          <Row>
-            <div style={{ width: "50%", display: "flex", justifyContent: "center" }}>
+          <Row style={{ justifyContent: "center" }}>
+            <div style={{ width: "50%" }}>
               <Col className='containerStyle'>
                 {/* Grafico getVacanciesAmountDayTecnology() */}
-
                 <VictoryPie
                   width={300}
                   height={300}
