@@ -93,7 +93,7 @@ function App() {
                 {
                   data2.map((item, index) => {
                     return (
-                      <li style={{ color: item.color, fontSize: "15px" }}>
+                      <li style={{ color: item.color, fontSize: "20px" }}>
                         {item.name}
                       </li>
                     )
@@ -107,21 +107,20 @@ function App() {
 
         <Container className='mt-4'>
           <Row style={{ justifyContent: "center" }}>
-            <div style={{ width: "50%" }}>
-              <Col className='containerStyle'>
-                {/* Grafico getVacanciesAmountDayTecnology() */}
-                <VictoryPie
-                  width={300}
-                  height={300}
-                  padding={{ top: 100, bottom: 100 }}
+            <div className='containerStyle' style={{ width: "60%" }}>
+              {/* Grafico getVacanciesAmountDayTecnology() */}
+              <VictoryPie
+                width={300}
+                height={300}
+                padding={{ top: 55, bottom: 55 }}
 
-                  animate={{ duration: 1000 }}
-                  colorScale={["blue", "green", "red"]}
-                  data={data}
-                />
-
-              </Col>
+                animate={{ duration: 1000 }}
+                colorScale={["blue", "green", "red"]}
+                data={data}
+              />
             </div>
+
+
           </Row>
         </Container>
       </Container>

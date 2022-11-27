@@ -12,6 +12,7 @@ code {
 
 body, html {
   font-family: 'Roboto', sans-serif;
+  color: aliceblue;
   background: #425454;
   min-height: 100vh;
 }
