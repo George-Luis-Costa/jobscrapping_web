@@ -39,92 +39,97 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Container className='p-5 my-5'>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className='divStyle'>
+        <Container className='p-5 my-5'>
+          <Row className='mb-3'>
+            <h1 className='h1Main'>Gráficos de Vagas na Área de Tecnologia:</h1>
+          </Row>
 
-        <Container>
+          <Container>
 
-          <Row className='containerStyle'>
+            <Row className='containerStyle'>
 
-            <Col>
-              <div>
-                <Dropdown className='mt-2' style={{ display: "flex" }}>
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Tipo de Tecnologia
-                  </Dropdown.Toggle>
+              <Col>
+                <div>
+                  <Dropdown className='mt-2'>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      Tipo de Tecnologia
+                    </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item>Mobile</Dropdown.Item>
-                    <Dropdown.Item>Web</Dropdown.Item>
-                    <Dropdown.Item>Back-end</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+                    <Dropdown.Menu>
+                      <Dropdown.Item>Mobile</Dropdown.Item>
+                      <Dropdown.Item>Web</Dropdown.Item>
+                      <Dropdown.Item>Back-end</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
 
-                {/* getVacanciesAmountTecnology() */}
-                <VictoryChart
-                  width={500}
-                  height={400}
-                >
+                  {/* getVacanciesAmountTecnology() */}
+                  <VictoryChart
+                    width={500}
+                    height={400}
+                  >
+                    {
+                      data2.map((item, index) => {
+                        return (
+                          <VictoryLine
+                            labelComponent={<VictoryLabel text={item.name} />}
+                            animate={{
+                              duration: 2000,
+                              onLoad: { duration: 1000 }
+                            }}
+                            key={index}
+                            data={item.vagas}
+                            style={{
+                              data: { stroke: item.color }
+                            }}
+                          />
+                        )
+                      })
+                    }
+                  </VictoryChart>
+                </div>
+              </Col>
+
+              <Col>
+                <h1 className='mt-5 h2'>Tecnologias:</h1>
+                <ul>
                   {
                     data2.map((item, index) => {
                       return (
-                        <VictoryLine
-                          labelComponent={<VictoryLabel text={item.name} />}
-                          animate={{
-                            duration: 2000,
-                            onLoad: { duration: 1000 }
-                          }}
-                          key={index}
-                          data={item.vagas}
-                          style={{
-                            data: { stroke: item.color }
-                          }}
-                        />
+                        <li style={{ color: item.color, fontSize: "20px" }}>
+                          {item.name}
+                        </li>
                       )
                     })
                   }
-                </VictoryChart>
+                </ul>
+                {/* </div> */}
+              </Col>
+            </Row>
+          </Container>
+
+          <Container className='mt-4'>
+            <Row style={{ justifyContent: "center" }}>
+              <div className='containerStyle' style={{ width: "60%" }}>
+                {/* Grafico getVacanciesAmountDayTecnology() */}
+                <VictoryPie
+                  width={300}
+                  height={300}
+                  padding={{ top: 55, bottom: 55 }}
+
+                  animate={{ duration: 1000 }}
+                  colorScale={["blue", "green", "red"]}
+                  data={data}
+                />
               </div>
-            </Col>
 
-            <Col>
-              <h1 className='mt-5 h2'>Tecnologias:</h1>
-              <ul>
-                {
-                  data2.map((item, index) => {
-                    return (
-                      <li style={{ color: item.color, fontSize: "20px" }}>
-                        {item.name}
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-              {/* </div> */}
-            </Col>
-          </Row>
+
+            </Row>
+          </Container>
         </Container>
-
-        <Container className='mt-4'>
-          <Row style={{ justifyContent: "center" }}>
-            <div className='containerStyle' style={{ width: "60%" }}>
-              {/* Grafico getVacanciesAmountDayTecnology() */}
-              <VictoryPie
-                width={300}
-                height={300}
-                padding={{ top: 55, bottom: 55 }}
-
-                animate={{ duration: 1000 }}
-                colorScale={["blue", "green", "red"]}
-                data={data}
-              />
-            </div>
-
-
-          </Row>
-        </Container>
-      </Container>
-    </>
+      </div>
+    </div>
   );
 }
 
