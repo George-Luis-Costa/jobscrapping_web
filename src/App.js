@@ -46,7 +46,7 @@ function App() {
             <h1 className='h1Main'>Gráficos de Vagas na Área de Tecnologia:</h1>
           </Row>
 
-          <Container>
+          <Container className='d-flex justify-content-center'>
 
             <Row className='containerStyle'>
 
@@ -111,7 +111,7 @@ function App() {
 
           <Container className='mt-4'>
             <Row style={{ justifyContent: "center" }}>
-              <div className='containerStyle' style={{ width: "60%" }}>
+              <div className='containerStyle' style={{ width: "50%", borderRadius: "30%" }}>
                 {/* Grafico getVacanciesAmountDayTecnology() */}
                 <VictoryPie
                   width={300}

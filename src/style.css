@@ -3,18 +3,17 @@
     padding: 15px;
     border-radius: 30px;
     box-shadow: 10px 5px 5px black;
+    width: 90%;
 }
 
 .h1Main {
-    font-size: 2em;
+    font-size: 2.3em;
     color: #FAFFFA;
     text-align: center;
     font-family: "Open Sans", sans-serif;
 }
 
 .divStyle {
-    /* display: flex;
-    justify-content: center; */
     width: 90%;
     background-color: #F7146B;
     border-radius: 50px;
