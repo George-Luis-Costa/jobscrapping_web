@@ -111,12 +111,12 @@ function App() {
 
           <Container className='mt-4'>
             <Row style={{ justifyContent: "center" }}>
-              <div className='containerStyle' style={{ width: "50%", borderRadius: "30%" }}>
+              <div className='containerStyle2'>
                 {/* Grafico getVacanciesAmountDayTecnology() */}
                 <VictoryPie
                   width={300}
                   height={300}
-                  padding={{ top: 55, bottom: 55 }}
+                  padding={{ top: 40, bottom: 60 }}
 
                   animate={{ duration: 1000 }}
                   colorScale={["blue", "green", "red"]}

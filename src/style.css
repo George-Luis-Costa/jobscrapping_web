@@ -6,6 +6,14 @@
     width: 90%;
 }
 
+.containerStyle2 {
+    width: 60%;
+    border-radius: 30%;
+    box-shadow: 10px 5px 5px black;
+    padding: 15px;
+    background: #203939;
+}
+
 .h1Main {
     font-size: 2.3em;
     color: #FAFFFA;
@@ -17,4 +25,10 @@
     width: 90%;
     background-color: #F7146B;
     border-radius: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .containerStyle2 {
+        width: 80%;
+    }
 }
