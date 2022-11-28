@@ -41,7 +41,7 @@ function App() {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className='divStyle'>
-        <Container className='p-5 my-5'>
+        <Container className='p-0 my-4'>
           <Row className='mb-3'>
             <h1 className='h1Main'>Gráficos de Vagas na Área de Tecnologia:</h1>
           </Row>
