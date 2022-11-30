@@ -7,7 +7,7 @@ style="width: 100px; height: 100px;"/>
 
 ## :book: Descrição do Projeto 
 
-<p>O projeto Job Scrapping é um projeto que coleta as informações de vagas de emprego em diversos sites e disponibiliza essas informações em um banco de dados MongoDB. Esse que será consultado por uma API Python que disponibilizará essas informações em um formato JSON para o App em React.</p>
+<p>O projeto Job Scrapping é um projeto que coleta as informações de vagas de emprego em diversos sites e disponibiliza essas informações em um banco de dados MongoDB. Esse que será consultado por uma API Python que disponibilizará essas informações em um formato JSON para o App (PWA - Progressive Web Apps) em React.</p>
 
 
 ## 🚀 Tecnologias utilizadas
