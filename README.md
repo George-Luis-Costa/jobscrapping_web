@@ -50,11 +50,12 @@ style="width: 100px; height: 100px;"/>
 
 <p>Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:</p>
 
-[Node.js](https://nodejs.org/en/).
+- [Node.js](https://nodejs.org/en/).
+
 
 <p>Além disto é bom ter um editor para trabalhar com o código como:</p> 
 
-[VSCode](https://code.visualstudio.com/)
+- [VSCode](https://code.visualstudio.com/)
 
 <hr>
 <br>
