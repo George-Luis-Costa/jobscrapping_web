@@ -65,7 +65,7 @@ Me envie uma mensagem para: georgel.jc98@gmail.com
 <br>
 <hr>
 
-## Autor do Projeto:
+## Autores do Projeto:
 <p>George Luis Costa Ribeiro</p>
 <p>Bruno Almeida Vasconcelos</p>
 <p>Leonardo S.B. Lang<p>
