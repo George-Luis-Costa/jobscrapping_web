@@ -39,7 +39,7 @@ style="width: 100px; height: 100px;"/>
 
 ## :hammer: Funcionalidades do projeto
 
-- `Funcionalidade 1`: Informar vagas em tempo real - quantidade de vagas do dia.
+- `Funcionalidade 1`: Informar vagas em tempo real - quantidade de vagas do dia para cada tecnologia.
 - `Funcionalidade 2`: Informar quantidade vagas totais por tecnologia
 - `Fonte`: empregos.com.br
 
