@@ -39,7 +39,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className='d-flex justify-content-center'>
       <div className='divStyle'>
         <Container className='p-0 my-4'>
           <Row className='mb-3'>
@@ -81,7 +81,7 @@ function App() {
                             key={index}
                             data={item.vagas}
                             style={{
-                              data: { stroke: item.color }
+                              data: { stroke: item.color },
                             }}
                           />
                         )
@@ -116,8 +116,7 @@ function App() {
                 <VictoryPie
                   width={300}
                   height={300}
-                  padding={{ top: 40, bottom: 60 }}
-
+                  padding={{ top: 40, bottom: 40, left: 60, right: 60 }}
                   animate={{ duration: 1000 }}
                   colorScale={["blue", "green", "red"]}
                   data={data}
