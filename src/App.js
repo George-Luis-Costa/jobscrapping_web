@@ -17,10 +17,29 @@ function App() {
       setData(response);
 
       const response2 = await vs.getVacanciesAmountDayTecnology();
-      const color = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'gray'];
+      let color = [
+        '#3C4664',
+        '#64A3B1',
+        '#3BB85A',
+        '#A7AD62',
+        '#BE8951',
+        '#ff79c6',
+        '#8065A7',
+        '#A33535',
+        '#A3A3A3',
+        "#FF0000",
+        "#FF7F00",
+        "#FFFF00",
+        "#00FF00",
+        "#0000FF",
+        "#4B0082",
+        "#9400D3"
+      ];
 
+      let index = 0;
       const r1 = response2.map((item) => {
-        item.color = color[Math.floor(Math.random() * color.length)];
+        item.color = color[index];
+        index++;
         color.pop(color.indexOf(item.color));
         return item;
       })
@@ -39,97 +58,84 @@ function App() {
   }, []);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div className='divStyle'>
-        <Container className='p-0 my-4'>
-          <Row className='mb-3'>
-            <h1 className='h1Main'>Gráficos de Vagas na Área de Tecnologia:</h1>
-          </Row>
+    <>
+      <h1 className='h1Main'>Gráficos de Vagas na Área de Tecnologia:</h1>
+      <div className='wrapper'>
 
-          <Container className='d-flex justify-content-center'>
+        <div className='card'>
+          <div className='container'>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Tipo de Tecnologia
+              </Dropdown.Toggle>
 
-            <Row className='containerStyle'>
+              <Dropdown.Menu>
+                <Dropdown.Item>Mobile</Dropdown.Item>
+                <Dropdown.Item>Web</Dropdown.Item>
+                <Dropdown.Item>Back-end</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-              <Col>
-                <div>
-                  <Dropdown className='mt-2'>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      Tipo de Tecnologia
-                    </Dropdown.Toggle>
+            <VictoryChart
+              width={500}
+              height={400}
+            >
+              {
+                data2.map((item, index) => {
+                  return (
+                    <VictoryLine
+                      labelComponent={<VictoryLabel text={item.name} />}
+                      animate={{
+                        duration: 2000,
+                        onLoad: { duration: 1000 }
+                      }}
+                      key={index}
+                      data={item.vagas}
+                      style={{
+                        data: { stroke: item.color }
+                      }}
+                    />
+                  )
+                })
+              }
+            </VictoryChart>
 
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Mobile</Dropdown.Item>
-                      <Dropdown.Item>Web</Dropdown.Item>
-                      <Dropdown.Item>Back-end</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+          </div>
 
-                  {/* getVacanciesAmountTecnology() */}
-                  <VictoryChart
-                    width={500}
-                    height={400}
-                  >
-                    {
-                      data2.map((item, index) => {
-                        return (
-                          <VictoryLine
-                            labelComponent={<VictoryLabel text={item.name} />}
-                            animate={{
-                              duration: 2000,
-                              onLoad: { duration: 1000 }
-                            }}
-                            key={index}
-                            data={item.vagas}
-                            style={{
-                              data: { stroke: item.color }
-                            }}
-                          />
-                        )
-                      })
-                    }
-                  </VictoryChart>
-                </div>
-              </Col>
-
-              <Col>
-                <h1 className='mt-5 h2'>Tecnologias:</h1>
-                <ul>
-                  {
-                    data2.map((item, index) => {
-                      return (
-                        <li style={{ color: item.color, fontSize: "20px" }}>
-                          {item.name}
-                        </li>
-                      )
-                    })
-                  }
-                </ul>
-                {/* </div> */}
-              </Col>
-            </Row>
-          </Container>
-
-          <Container className='mt-4'>
-            <Row style={{ justifyContent: "center" }}>
-              <div className='containerStyle2'>
-                {/* Grafico getVacanciesAmountDayTecnology() */}
-                <VictoryPie
-                  width={300}
-                  height={300}
-                  padding={{ top: 40, bottom: 60 }}
-
-                  animate={{ duration: 1000 }}
-                  colorScale={["blue", "green", "red"]}
-                  data={data}
-                />
-              </div>
+          <div class="info">
+            <h1>Tecnologias:</h1>
+            <ul>
+              {
+                data2.map((item, index) => {
+                  return (
+                    <li style={{ backgroundColor: item.color, fontSize: "20px" }}>
+                      {item.name}
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        </div>
 
 
-            </Row>
-          </Container>
-        </Container>
+        <div className='card'>
+          <div className='container'>
+            <VictoryPie
+              width={300}
+              height={300}
+              padding={{ top: 40, bottom: 60 }}
+
+              animate={{ duration: 1000 }}
+              colorScale={["blue", "green", "red"]}
+              data={data}
+            />
+          </div>
+
+
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
