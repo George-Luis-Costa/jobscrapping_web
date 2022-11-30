@@ -8,9 +8,9 @@
 
 ## :hammer: Funcionalidades do projeto
 
-- `Funcionalidade 1`: Consulta de placas de veiculos
-- `Funcionalidade 2`: Calculadora com 5 operações
-- `Funcionalidade 2a`: Validação de dados
+- `Funcionalidade 1`: Informar vagas em tempo real - quantidade de vagas do dia.
+- `Funcionalidade 2`: Informar quantidade vagas totais por tecnologia
+- `Fonte`: empregos.com.br
 
 <hr>
 <br>
