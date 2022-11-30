@@ -12,7 +12,7 @@ style="width: 100px; height: 100px;"/>
 
 ## 🚀 Tecnologias utilizadas
 
-<li>
+<div>
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS" />
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
 <!-- Mogo db -->
@@ -23,7 +23,7 @@ style="width: 100px; height: 100px;"/>
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 <!-- Fast api -->
 <img src="https://img.shields.io/badge/FastAPI-109989?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-</li>
+</div>
 
 
 <br>
