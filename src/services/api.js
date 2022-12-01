@@ -1,7 +1,7 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// const api = axios.create({
-//     baseURL: 'http://localhost:3333',
-// });
+const api = axios.create({
+    baseURL: 'https://job-scrapping-api-production.up.railway.app',
+});
 
-// export default api;
+export default api;
