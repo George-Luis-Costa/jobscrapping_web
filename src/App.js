@@ -80,7 +80,11 @@ export default function App() {
 
   return (
     <>
-      <h1 className='h1Main'>Gráficos de Vagas na Área por Tecnologia:</h1>
+      <h1 className='h1Main'>
+        <img src="https://user-images.githubusercontent.com/61352086/194158541-07e551e3-8fd1-4289-b16f-eebf5afb3fad.png" alt="empregos.com.br" width={70} height={70} />
+        {" "}
+        Gráficos de Vagas na Área por Tecnologia:
+      </h1>
 
       <div className='card'>
         {
@@ -206,6 +210,7 @@ export default function App() {
         <h2>Fonte:
           <a href="https://www.empregos.com.br/vagas">empregos.com.br</a>
         </h2>
+        <img src="https://user-images.githubusercontent.com/61352086/194158541-07e551e3-8fd1-4289-b16f-eebf5afb3fad.png" alt="empregos.com.br" width={100} height={100} />
       </div>
     </>
   );
