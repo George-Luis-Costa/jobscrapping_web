@@ -110,7 +110,7 @@ Me envie uma mensagem para: georgel.jc98@gmail.com
 
 <br>
 
-[Git Hub] (https://github.com/George-Luis-Costa?tab=repositories)
+[Git Hub] (https://github.com/George-Luis-Costa)
 <br>
 [Git Hub] (http://github.com/brunovollin)
 <br>
